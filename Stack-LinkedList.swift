@@ -37,7 +37,7 @@ class LinkedList<T> {
         var currentNode = head
         while (currentNode != nil) {
             count += 1
-            currentNode = currentNode.next
+            currentNode = currentNode?.next
         }
         
         return count
@@ -62,8 +62,8 @@ class LinkedList<T> {
         }
         
         let result = head
-        head = result.next
+        head = result?.next
         
-        return result.value
+        return result?.value
     }
 }
