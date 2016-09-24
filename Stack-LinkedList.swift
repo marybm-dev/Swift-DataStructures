@@ -26,4 +26,20 @@ class LinkedList<T> {
     public func isEmpty() -> Bool {
         return head == nil
     }
+    
+    public func count() -> Int {
+        
+        if self.isEmpty() {
+            return 0
+        }
+        
+        var count = 0
+        var currentNode = head
+        while (currentNode != nil) {
+            count += 1
+            currentNode = currentNode.next
+        }
+        
+        return count
+    }
 }
