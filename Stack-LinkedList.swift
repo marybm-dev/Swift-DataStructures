@@ -17,3 +17,13 @@ class LinkedListNode<T> {
         self.value = value
     }
 }
+
+class LinkedList<T> {
+    public typealias Node = LinkedListNode<T>
+    
+    private var head: Node?
+    
+    public func isEmpty() -> Bool {
+        return head == nil
+    }
+}
