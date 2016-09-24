@@ -42,4 +42,18 @@ class LinkedList<T> {
         
         return count
     }
+    
+    public func push(value: T) {
+        
+        if self.isEmpty() {
+            head = Node(value)
+        }
+        else {
+            let newNode = Node(value)
+            newNode.next = head
+            head = newNode
+        }
+    }
+    
+    
 }
