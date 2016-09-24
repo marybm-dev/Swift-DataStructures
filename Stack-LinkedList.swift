@@ -55,5 +55,15 @@ class LinkedList<T> {
         }
     }
     
-    
+    public func pop() -> T? {
+        
+        if self.isEmpty() {
+            return nil
+        }
+        
+        let result = head
+        head = result.next
+        
+        return result.value
+    }
 }
