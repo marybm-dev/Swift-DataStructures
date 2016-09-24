@@ -8,18 +8,18 @@
 
 import Foundation
 
-class LinkedListNode<T> {
+class StackLinkedListNode<T> {
     
     var value : T
-    var next  : LinkedListNode?
+    var next  : StackLinkedListNode?
     
     init(_ value: T) {
         self.value = value
     }
 }
 
-class LinkedList<T> {
-    public typealias Node = LinkedListNode<T>
+class StackLinkedList<T> {
+    public typealias Node = StackLinkedListNode<T>
     
     private var head: Node?
     
@@ -69,7 +69,7 @@ class LinkedList<T> {
 }
 
 
-var myList = LinkedList<Int>()
+var myList = StackLinkedList<Int>()
 myList.push(value: 5)
 myList.push(value: 3)
 myList.push(value: 1)
