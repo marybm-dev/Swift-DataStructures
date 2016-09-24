@@ -17,3 +17,14 @@ class LinkedListNode<T: Equatable> {
         self.value = value
     }
 }
+
+class LinkedList<T: Equatable> {
+    public typealias Node = LinkedListNode<T>
+    
+    private var head: Node?
+    private var tail: Node?
+    
+    public func isEmpty() -> Bool {
+        return head == nil && tail == nil
+    }
+}
