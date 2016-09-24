@@ -135,4 +135,78 @@ class LinkedList<T: Equatable> {
         
         return false
     }
+    
+    public func display() {
+        
+        if self.isEmpty() {
+            print("This LinkedList is currently empty")
+            return
+        }
+        
+        var current = head
+        while current != nil {
+            print("\(current!.value)")
+            current = current?.next
+        }
+    }
 }
+
+
+
+var myList = LinkedList<String>()
+myList.display()
+/* This LinkedList is currently empty */
+
+myList.insert("Bob")
+myList.insert("Amy")
+myList.insert("Tom")
+myList.display()
+/*
+ Bob
+ Amy
+ Tom
+*/
+
+myList.insert("Steve")
+myList.insert("Jen")
+myList.insertAfter("Tom", value: "Joseph")
+myList.display()
+/*
+ Bob
+ Amy
+ Tom
+ Joseph
+ Steve
+ Jen
+*/
+
+myList.delete("Tom")
+myList.display()
+/*
+ Bob
+ Amy
+ Joseph
+ Steve
+ Jen
+ */
+
+myList.delete("Jack")
+myList.display()
+/*
+ Bob
+ Amy
+ Joseph
+ Steve
+ Jen
+*/
+
+myList.insertAfter("Bob", value: "Tiffany")
+myList.display()
+/*
+ Bob
+ Tiffany
+ Amy
+ Joseph
+ Steve
+ Jen
+*/
