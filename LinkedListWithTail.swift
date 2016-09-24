@@ -63,4 +63,38 @@ class LinkedList<T: Equatable> {
         
         return nil
     }
+    public func insert(_ value: T) {
+        
+        if self.isEmpty() {
+            head = Node(value)
+            tail = head
+        }
+        else {
+            tail?.next = Node(value)
+            tail = tail?.next
+        }
+    }
+    
+    public func insertAfter(_ element: T, value: T) -> Bool {
+        
+        if self.isEmpty() {
+            return false
+        }
+        
+        if let result = find(element) {
+            if result === tail {
+                result.next = Node(value)
+                tail = result.next
+            }
+            else {
+                let temp = result.next
+                let newNode = Node(value)
+                newNode.next = temp
+                result.next = newNode
+            }
+            return true
+        }
+        
+        return false
+    }
 }
