@@ -97,4 +97,42 @@ class LinkedList<T: Equatable> {
         
         return false
     }
+    
+    public func delete(_ value: T) -> Bool {
+        
+        if self.isEmpty() {
+            return false
+        }
+        
+        if let result = find(value) {
+            if result === head && result === tail {
+                head = result.next
+                tail = head
+            }
+            else if result === head {
+                head = result.next
+            }
+            else if result === tail {
+                if let link = findLink(to: value) {
+                    link.next = nil
+                    tail = link
+                }
+                else {
+                    return false
+                }
+            }
+            else {
+                if let link = findLink(to: value) {
+                    let victim = link.next
+                    link.next = victim?.next
+                }
+                else {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        return false
+    }
 }
