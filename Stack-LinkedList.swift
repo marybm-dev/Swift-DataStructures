@@ -67,3 +67,18 @@ class LinkedList<T> {
         return result?.value
     }
 }
+
+
+var myList = LinkedList<Int>()
+myList.push(value: 5)
+myList.push(value: 3)
+myList.push(value: 1)
+
+myList.count()      // 3
+
+myList.pop()        // 1
+myList.pop()        // 3
+myList.pop()        // 5
+myList.pop()        // nil
+
+myList.count()      // 0
