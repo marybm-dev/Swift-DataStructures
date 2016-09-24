@@ -27,4 +27,40 @@ class LinkedList<T: Equatable> {
     public func isEmpty() -> Bool {
         return head == nil && tail == nil
     }
+    
+    public func find(_ value: T) -> Node? {
+        
+        if self.isEmpty() {
+            return nil
+        }
+        
+        var current = head
+        while current != nil {
+            if current!.value == value {
+                return current
+            }
+            current = current?.next
+        }
+        
+        return nil
+    }
+    
+    public func findLink(to value: T) -> Node? {
+        
+        if self.isEmpty() {
+            return nil
+        }
+        
+        var current = head
+        var next = head?.next
+        while current != nil && next != nil {
+            if next!.value == value {
+                return current
+            }
+            current = next
+            next = next?.next
+        }
+        
+        return nil
+    }
 }
